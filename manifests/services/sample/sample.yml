@@ -49,18 +49,3 @@ spec:
             httpGet:
               path: /health
               port: web
-
----
-
-apiVersion: monitoring.coreos.com/v1
-kind: ServiceMonitor
-metadata:
-  name: sample-app
-  labels:
-    team: sample-team
-spec:
-  selector:
-    matchLabels:
-      app: sample-app
-  endpoints:
-  - port: service-web
