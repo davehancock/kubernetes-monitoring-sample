@@ -61,9 +61,20 @@ http://192.168.99.100:31899
 ## Grafana
 
 Modelled on example configuration found here:
-
 https://github.com/coreos/prometheus-operator/tree/master/contrib/kube-prometheus/manifests/grafana
+
+Adding the json for the dashboards by hand is pretty painful, discussions and tools below:
+https://github.com/coreos/prometheus-operator/issues/272 
+https://github.com/coreos/prometheus-operator/blob/master/contrib/kube-prometheus/docs/developing-alerts-and-dashboards.md
+https://github.com/coreos/prometheus-operator/tree/master/contrib/kube-prometheus/hack/grafana-dashboards-configmap-generator 
 
 minikube service grafana --url
 
 http://192.168.99.100:31900
+
+
+## Node Exporter 
+
+Modelled on example configuration found here:
+https://github.com/coreos/prometheus-operator/tree/master/contrib/kube-prometheus
+
