@@ -1,14 +1,14 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: sample-app
+  name: prometheus
   labels:
-    team: sample-team
+    k8s-app: prometheus
     tier: monitor
 spec:
   selector:
     matchLabels:
-      app: sample-app
+      prometheus: k8s
   endpoints:
-  - port: service-web
-  
+  - port: web
+    interval: 30s

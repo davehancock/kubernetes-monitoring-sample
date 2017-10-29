@@ -1,14 +1,15 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: sample-app
+  name: node-exporter
   labels:
-    team: sample-team
+    k8s-app: node-exporter
     tier: monitor
 spec:
+  jobLabel: k8s-app
   selector:
     matchLabels:
-      app: sample-app
+      k8s-app: node-exporter
   endpoints:
-  - port: service-web
-  
+  - port: http-metrics
+    interval: 30s
